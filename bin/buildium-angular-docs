@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+var buildiumAngularDocs = require('../index');
+
+var options = require('yargs')
+  .option('destination', {
+    alias: 'd',
+    describe: 'output directory for generated docs'
+  })
+  .option('source-files', {
+    alias: 's',
+    describe: 'comma-separated list of files to check for documentation (e.g. index.js,src/*.js)',
+    default: '**/*'
+  })
+  .coerce('source-files', function(arg) { return arg.split(',') })
+  .option('gh-pages', {
+    describe: 'publish gh-pages'
+  })
+  .boolean('gh-pages')
+  .help()
+  .argv
+
+buildiumAngularDocs(options);
