@@ -4,8 +4,8 @@
   "description": "Publish angular documentation (ngdoc) to a gh-pages branch on Github",
   "main": "index.js",
   "scripts": {
-    "test": "standard",
-    "standard": "standard --fix"
+    "test": "standard index.js lib/**/*.js",
+    "standard": "npm test -- --fix"
   },
   "bin": {
     "buildium-angular-docs": "bin/buildium-angular-docs"
