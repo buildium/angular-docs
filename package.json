@@ -23,7 +23,7 @@
   "homepage": "https://github.com/buildium/angular-docs#readme",
   "dependencies": {
     "dgeni-alive": "0.3.5",
-    "gh-pages": "0.12.0",
+    "gh-pages": "github:buildium/gh-pages",
     "yargs": "7.0.2"
   },
   "devDependencies": {
