@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/buildium/angular-docs#readme",
   "dependencies": {
-    "dgeni-alive": "0.3.5",
+    "dgeni-alive": "0.4.1",
     "gh-pages": "1.0.0",
     "yargs": "7.0.2"
   },
