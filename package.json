@@ -4,7 +4,9 @@
   "description": "Publish angular documentation (ngdoc) to a gh-pages branch on Github",
   "main": "index.js",
   "scripts": {
+    "postinstall": "concat -o config/dgeni-alive/website/styles/docs.css node_modules/dgeni-alive/src/packages/website/templates/website/styles/docs.css node_modules/@buildium/theme/dist/theme-styles.css",
     "test": "standard index.js lib/**/*.js",
+    "generate-sample": "node test/test.js",
     "standard": "npm test -- --fix"
   },
   "bin": {
@@ -22,6 +24,8 @@
   },
   "homepage": "https://github.com/buildium/angular-docs#readme",
   "dependencies": {
+    "@buildium/theme": "2.3.6",
+    "concat": "1.0.3",
     "dgeni-alive": "0.4.1",
     "gh-pages": "1.0.0",
     "yargs": "7.0.2"
