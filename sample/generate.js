@@ -7,6 +7,7 @@ docs({
   scripts: [ 
     path.join(__dirname, 'src/module.js'), 
     path.join(__dirname, 'src/service.js'), 
+    path.join(__dirname, 'src/component.js'), 
   ],
   sourceFiles: [ path.join(__dirname, 'src/module.js'), path.join(__dirname, 'src/**/*.js') ],
   destination: path.join(__dirname, 'docs'),
