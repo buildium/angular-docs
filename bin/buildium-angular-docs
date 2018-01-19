@@ -3,18 +3,22 @@
 var buildiumAngularDocs = require('../index');
 
 var options = require('yargs')
+  .option('angular-version', {
+    alias: 'v',
+    describe: 'The target version of AngularJS'
+  })
   .option('destination', {
     alias: 'd',
-    describe: 'output directory for generated docs'
+    describe: 'Output directory for generated docs'
   })
   .option('source-files', {
     alias: 's',
-    describe: 'comma-separated list of files to check for documentation (e.g. index.js,src/*.js)',
+    describe: 'Comma-separated list of files to check for documentation (e.g. index.js,src/*.js)',
     default: '**/*'
   })
   .coerce('source-files', function(arg) { return arg.split(',') })
   .option('gh-pages', {
-    describe: 'publish gh-pages'
+    describe: 'Whether to attempt to update gh-pages branch'
   })
   .boolean('gh-pages')
   .help()

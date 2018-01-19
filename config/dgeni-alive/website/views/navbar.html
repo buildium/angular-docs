@@ -1,0 +1,20 @@
+<nav class="global-nav" ng-controller="NavbarCtrl as navbar">
+  <div class="global-nav__container">
+    <ul class="global-nav__main-menu">
+      <li class="global-nav__main-menu-item">
+        <a class="global-nav__main-menu-link global-nav__main-menu-link--home"></a>
+      </li>
+      <li class="global-nav__main-menu-item">
+        <a class="global-nav__main-menu-link">{$ doc.locals.productTitle $} {$ doc.locals.productVersion $}</a>
+      </li>
+      <li class="global-nav__main-menu-item" ng-repeat="area in navbar.areas" aria-label="{{area.title}}">
+        <a class="global-nav__main-menu-link" ng-class="{'popover__link--selected': isActive(area)}" ng-href="{{area.href}}">{{area.title}}</a>
+      </li>
+    </ul>
+    <div class="global-nav__secondary-menu">
+      <div class="global-nav__secondary-nav">
+        <div ng-include="'views/searchbox.html'"></div>
+      </div>
+    </div>
+  </div>
+</nav>
