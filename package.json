@@ -1,10 +1,10 @@
 {
   "name": "@buildium/angular-docs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Publish angular documentation (ngdoc) to a gh-pages branch on Github",
   "main": "index.js",
   "scripts": {
-    "postinstall": "concat -o config/dgeni-alive/website/styles/docs.css node_modules/dgeni-alive/src/packages/website/templates/website/styles/docs.css node_modules/@buildium/theme/dist/theme-styles.css",
+    "prepublish": "concat -o config/dgeni-alive/website/styles/docs.css node_modules/dgeni-alive/src/packages/website/templates/website/styles/docs.css node_modules/@buildium/theme/dist/theme-styles.css",
     "test": "standard index.js lib/**/*.js",
     "generate-sample": "node sample/generate.js",
     "standard": "npm test -- --fix"
