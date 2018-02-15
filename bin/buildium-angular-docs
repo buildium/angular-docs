@@ -17,6 +17,10 @@ var options = require('yargs')
     default: '**/*'
   })
   .coerce('source-files', function(arg) { return arg.split(',') })
+  .option('stylesheets', {
+    describe: 'Comma-separated list of CSS files to add to documentation examples',
+  })
+  .coerce('stylesheets', function(arg) { return arg.split(',') })
   .option('gh-pages', {
     describe: 'Whether to attempt to update gh-pages branch'
   })
