@@ -24,7 +24,7 @@
       {% code %}
       <{$ doc.name | dashCase $}
         {%- for param in doc.params %}
-        {$ lib.directiveParam(param.alias or param.name, param.type, '="', '"') $}
+        {$ lib.directiveParam(param.alias or param.name, param.typeList, '="', '"') $}
         {%- endfor %}>
       ...
       </{$ doc.name | dashCase $}>
@@ -37,7 +37,7 @@
         {% code %}
         <{$ doc.element $}
           {%- for param in doc.params %}
-          {$ lib.directiveParam(param.name, param.type, '="', '"') $}
+          {$ lib.directiveParam(param.name, param.typeList, '="', '"') $}
           {%- endfor %}>
         ...
         </{$ doc.element $}>
@@ -51,7 +51,7 @@
         {% set sep = joiner(' ') %}
         <{$ doc.element $} class="
         {%- for param in doc.params -%}
-          {$ sep() $}{$ lib.directiveParam(param.name, param.type, ': ', ';') $}
+          {$ sep() $}{$ lib.directiveParam(param.name, param.typeList, ': ', ';') $}
         {%- endfor %}"> ... </{$ doc.element $}>
         {% endcode %}
       </li>

@@ -6,7 +6,7 @@
   {% code %}
   <input type="{$ doc.inputType $}"
     {%- for param in doc.params %}
-         {$ lib.directiveParam(param.alias or param.name, param.type, '="', '"') $}
+         {$ lib.directiveParam(param.alias or param.name, param.typeList, '="', '"') $}
     {%- endfor %}>
   {% endcode %}
 {% endblock %}
