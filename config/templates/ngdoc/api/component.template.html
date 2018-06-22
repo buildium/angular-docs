@@ -1,0 +1,34 @@
+{% import "lib/macros.html" as lib -%}
+{% extends "api/api.template.html" %}
+
+{% block additional %}
+  {% block usage %}
+  <h2 id="usage">Usage</h2>
+  <div class="usage">
+  {% if doc.usage %}
+    {$ doc.usage | marked $}
+  {% else %}
+    <ul>
+      <li>as element:
+      {% code %}
+      <{$ doc.name | dashCase $}
+        {%- for param in doc.params %}
+        {$ lib.directiveParam(param.alias or param.name, param.typeList, '="', '"') $}
+        {%- endfor %}>
+      ...
+      </{$ doc.name | dashCase $}>
+      {% endcode %}
+      </li>
+  {%- endif %}
+  </div>
+  {% endblock -%}
+
+  {% include "lib/params.template.html" %}
+  {% include "lib/events.template.html" %}
+
+  {%- if doc.animations %}
+  <h2 id="animations">Animations</h2>
+  {$ doc.animations | marked $}
+  {$ 'module:ngAnimate.$animate' | link('Click here', doc) $} to learn more about the steps involved in the animation.
+  {%- endif -%}
+{% endblock %}
