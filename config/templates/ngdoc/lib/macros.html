@@ -33,10 +33,10 @@
 {% endmacro -%}
 
 
-{%- macro directiveParam(name, type, join, sep) %}
-  {%- if type.optional %}[{% endif -%}
-  {$ name | dashCase $}{$ join $}{$ type.name $}{$ sep $}
-  {%- if type.optional %}]{% endif -%}
+{%- macro directiveParam(name, param, join, sep) %}
+  {%- if param.optional %}[{% endif -%}
+  {$ name | dashCase $}{$ join $}{$ param.typeList | escape $}{$ sep $}
+  {%- if param.optional %}]{% endif -%}
 {% endmacro -%}
 
 {%- macro functionSyntax(fn) %}

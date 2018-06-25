@@ -13,7 +13,7 @@
       {% code %}
       <{$ doc.name | dashCase $}
         {%- for param in doc.params %}
-        {$ lib.directiveParam(param.alias or param.name, param.typeList, '="', '"') $}
+        {$ lib.directiveParam(param.alias or param.name, param, '="', '"') $}
         {%- endfor %}>
       ...
       </{$ doc.name | dashCase $}>
