@@ -27,7 +27,7 @@
     "@buildium/theme": "2.6.8",
     "concat": "1.0.3",
     "dgeni-alive": "0.4.1",
-    "gh-pages": "1.0.0",
+    "gh-pages": "2.0.1",
     "yargs": "7.0.2"
   },
   "devDependencies": {
